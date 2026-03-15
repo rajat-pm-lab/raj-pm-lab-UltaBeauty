@@ -83,3 +83,12 @@ When creating deliverables, copy the appropriate template from `_templates/` int
 | 05-launch | `pitch-deck.md` | `05-launch/pitch-deck.md` |
 
 **Important:** The project sub-folder `projects/ulta-beauty/` has its own `CLAUDE.md` with phase status tracking and project-specific context. Check it for current project state before starting work.
+
+## Security — PUBLIC REPO
+This repo is public (portfolio for PM leadership). **Non-negotiable rules:**
+1. **Never commit secrets.** API keys, tokens, credentials → `.env` files only (already in `.gitignore`).
+2. **`.env.example` for prototypes.** When `04-build/` uses any API, create `.env.example` with placeholder values.
+3. **Pre-commit check.** Before every commit, verify no `.env`, `credentials.json`, `*.key`, or `*.pem` files are staged.
+4. **No hardcoded keys.** Use `process.env.API_KEY` — never inline strings.
+5. **Anonymize user data.** Real names from interviews/reviews are OK if publicly posted (app store reviews). Private user data must be anonymized.
+6. **No internal Ulta data.** Only use publicly available information (app store reviews, earnings calls, public articles).

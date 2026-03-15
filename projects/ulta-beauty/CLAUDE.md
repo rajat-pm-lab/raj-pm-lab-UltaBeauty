@@ -35,6 +35,14 @@ A product discovery and build project to identify AI-solvable pain points in the
 - Push back on scope creep and unvalidated assumptions
 - Optimize for shipping speed in the build phase
 
+## Security — Public Repo Rules
+This repo is **public** (portfolio showcase for PM leadership). Strict rules:
+- **NEVER commit API keys, tokens, or secrets.** All credentials go in `.env` files (already in `.gitignore`).
+- When building prototypes in `04-build/`, always create a `.env.example` with placeholder values (not real keys).
+- Before every commit, verify no `.env`, `credentials.json`, `*.key`, or `*.pem` files are staged.
+- If using OpenAI/Anthropic/Vercel APIs, use environment variables only — never hardcode.
+- Mock data is fine to commit. Real user data (emails, names from interviews) must be anonymized.
+
 ## Key Links
 - Templates: `../../_templates/`
 - Ideas backlog: `../../_brain/ideas-backlog.md`
