@@ -1,6 +1,6 @@
 # Ulta Beauty — AI Product Opportunity
 
-**Status:** Discovery
+**Status:** Build (Discovery complete, hypothesis validated)
 **Created:** 2026-03-14
 **Target company:** Ulta Beauty ($ULTA)
 **App:** Ulta Beauty: Makeup & Skincare
@@ -14,18 +14,18 @@ A product discovery and build project to identify AI-solvable pain points in the
 
 | Phase | Folder | Status | Purpose |
 | --- | --- | --- | --- |
-| Discovery | `01-discovery/` | **In Progress** | Mine app reviews, validate the problem, research the market |
+| Discovery | `01-discovery/` | **Complete** | Mine app reviews, validate the problem, research the market |
 | Definition | `02-definition/` | Not started | Write the PRD and define success metrics |
 | Design | `03-design/` | Not started | User stories, flows, and mockups |
-| Build | `04-build/` | Not started | Prototype → production code |
+| Build | `04-build/` | **In Progress** | Prototype → production code |
 | Launch | `05-launch/` | Not started | Ship to the world — LinkedIn post, outreach, demo video |
 
 ## How to Work Through This
-1. **Start in `01-discovery/`** — review-analysis.md (mine Play Store/Trustpilot reviews), then hypothesis.md, then market-research.md
-2. **If validated, move to `02-definition/`** — PRD, competitive analysis, user stories
-3. **Design in `03-design/`** — mockups, UX flows, key screen designs
-4. **Build in `04-build/`** — prototype on Replit/Lovable or direct React build, deploy to Vercel
-5. **Launch in `05-launch/`** — LinkedIn post, cold outreach, recording guide, distribution plan
+1. **Start in ****`01-discovery/`** — review-analysis.md (mine Play Store/Trustpilot reviews), then hypothesis.md, then market-research.md
+2. **If validated, move to ****`02-definition/`** — PRD, competitive analysis, user stories
+3. **Design in ****`03-design/`** — mockups, UX flows, key screen designs
+4. **Build in ****`04-build/`** — prototype on Replit/Lovable or direct React build, deploy to Vercel
+5. **Launch in ****`05-launch/`** — LinkedIn post, cold outreach, recording guide, distribution plan
 
 ## Claude's Role
 - Each phase has its own focus area

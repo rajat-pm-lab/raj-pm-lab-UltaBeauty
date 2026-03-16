@@ -12,10 +12,10 @@
 | Source | URL | Reviews analyzed | Rating | Notes |
 | --- | --- | --- | --- | --- |
 | Google Play Store | [URL] | [count] | [X]/5 ([total ratings]) | Primary source |
-| Apple App Store | [URL] | [count] | [X]/5 ([total ratings]) | |
-| Trustpilot | [URL] | [count] | [X]/5 | |
-| PissedConsumer | [URL] | [count] | [X]/5 | |
-| Reddit / forums | [URL] | [count] | N/A | |
+| Apple App Store | [URL] | [count] | [X]/5 ([total ratings]) |  |
+| Trustpilot | [URL] | [count] | [X]/5 |  |
+| PissedConsumer | [URL] | [count] | [X]/5 |  |
+| Reddit / forums | [URL] | [count] | N/A |  |
 
 **Overall sentiment (review period):** [X]% negative. [One-sentence summary of dominant tone.]
 
@@ -27,14 +27,14 @@
 
 | # | Pain Point | Mention Count | % of Negative Reviews | Avg "Helpful" Votes | Trend |
 | --- | --- | --- | --- | --- | --- |
-| 1 | | | | | Persistent / Growing / Spike / Declining |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
-| 7 | | | | | |
-| 8 | | | | | |
+| 1 |  |  |  |  | Persistent / Growing / Spike / Declining |
+| 2 |  |  |  |  |  |
+| 3 |  |  |  |  |  |
+| 4 |  |  |  |  |  |
+| 5 |  |  |  |  |  |
+| 6 |  |  |  |  |  |
+| 7 |  |  |  |  |  |
+| 8 |  |  |  |  |  |
 
 ---
 
@@ -78,11 +78,11 @@
 
 | Rank | Pain Point | Mentions | Avg Helpful | AI Solution | Revenue Model | Build Complexity |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | | | | | | S / M / L |
-| 2 | | | | | | |
-| 3 | | | | | | |
-| 4 | | | | | | |
-| 5 | | | | | | |
+| 1 |  |  |  |  |  | S / M / L |
+| 2 |  |  |  |  |  |  |
+| 3 |  |  |  |  |  |  |
+| 4 |  |  |  |  |  |  |
+| 5 |  |  |  |  |  |  |
 
 ---
 

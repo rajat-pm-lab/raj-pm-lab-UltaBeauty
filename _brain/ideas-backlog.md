@@ -68,10 +68,43 @@
 - **Leads to bigger product** — once users trust the tool, expand to checkout guardian, rewards tracking, CS advocate
 
 **Evidence base:**
-- 12+ mentions of marketplace frustration (highest avg helpful votes at 4.8)
-- Beauty Independent article documenting the backlash
+- 12+ mentions of marketplace frustration (highest avg helpful votes at 4.8) — see `01-discovery/review-analysis.md` Pain Point #2
+- [Beauty Independent article](https://www.beautyindependent.com/ulta-beauty-marketplace-launch-sparks-customer-backlash/) documenting the backlash
 - Reddit threads with hundreds of engaged users
 - Ulta's own FAQ admits marketplace purchases are excluded from redemption
+
+**Key data points:**
+
+| Metric | Value | Source |
+| --- | --- | --- |
+| Ultamate Rewards members | 46.7M (record, +5% YoY) | [FY2025 earnings call](https://www.fool.com/earnings/call-transcripts/2026/03/12/ulta-beauty-ulta-q4-2025-earnings-transcript/) |
+| % of sales from loyalty members | ~95% | FY2025 earnings |
+| Net sales (FY2025) | $12,392.8M (+9.7% YoY) | [Press release](https://www.ulta.com/investor/news-events/press-releases/detail/224/ulta-beauty-announces-fourth-quarter-and-fiscal-2025) |
+| Digital sales (FY2025, est.) | ~$2.5B (~20% of net sales) | Estimated |
+| App share of online sales | 60% | Earnings call |
+| App active users growth | +15% YoY | Earnings call |
+| UB Marketplace (current) | 200+ brands, 5,000 SKUs | Earnings call (up from 100+ at launch) |
+| Marketplace commission rate | 18% per sale | [Modern Retail](https://www.modernretail.co/technology/marketplace-briefing-ulta-bets-on-marketplace-to-reclaim-lost-market-share-as-amazons-beauty-sales-grow/) |
+| Marketplace revenue at risk | $50M-$125M | If marketplace reaches 10% of digital GMV but users won't buy without rewards |
+| FY2026 guidance: net sales | $13.1B-$13.3B (+6-7%) | Press release (deceleration from 9.7%) |
+| FY2026 guidance: comp sales | +2.5%-3.5% (down from +5.4%) | Press release |
+| FY2026 guidance: EPS | $28.05-$28.55 | Press release |
+| Total stores | 1,591 (1,505 US + 86 intl) | Press release |
+
+> Full earnings data: see `_brain/ulta-fy2025-earnings.md`
+
+**Revenue model:**
+
+| Stream | Math | Estimate |
+| --- | --- | --- |
+| Consumer — free tier | Marketplace labels, points calculator, coupon check | $0 (acquisition hook) |
+| Consumer — paid tier ($3-5/mo) | Price comparison, deal alerts, points optimizer | Target: $4/mo avg |
+| Conservative (0.1% of 10M) | 10K users × $4/mo × 12 | **$480K ARR** |
+| Realistic (0.5% of 10M) | 50K users × $4/mo × 12 | **$2.4M ARR** |
+| Optimistic (1.0% of 10M) | 100K users × $4/mo × 12 | **$4.8M ARR** |
+| B2B — Ulta license | Marketplace GMV recovery data + optimization layer | **$200K-$500K/year** |
+| B2B — brand insights | Anonymized shopping behavior sold to marketplace brands | $5K-$25K/brand/year |
+| **Total Year 2 target** | Consumer (realistic) + B2B | **$2.6M-$2.9M ARR** |
 
 **Weighted score:** 4.40 (highest of all ideas)
 

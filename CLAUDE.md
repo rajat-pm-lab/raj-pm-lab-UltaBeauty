@@ -28,7 +28,7 @@ These are hard-won lessons from my first PM lab project. Apply them here:
 - **App:** Ulta Beauty: Makeup & Skincare (iOS + Android)
 - **Key metrics:** $12.39B annual revenue, 44.6M Ultamate Rewards members, ~$2.5B digital sales, 1,400+ US stores
 - **Recent moves:** UB Marketplace launch (Oct 2025), TikTok Shop, BOPIS expansion
-- **Play Store:** https://play.google.com/store/apps/details?id=com.ulta&hl=en
+- https://play.google.com/store/apps/details?id=com.ulta&hl=en**Play**** Store:** https://play.google.com/store/apps/details?id=com.ulta&hl=en
 
 ## Tech Stack
 | Layer | Tools |
@@ -87,7 +87,7 @@ When creating deliverables, copy the appropriate template from `_templates/` int
 ## Security — PUBLIC REPO
 This repo is public (portfolio for PM leadership). **Non-negotiable rules:**
 1. **Never commit secrets.** API keys, tokens, credentials → `.env` files only (already in `.gitignore`).
-2. **`.env.example` for prototypes.** When `04-build/` uses any API, create `.env.example` with placeholder values.
+2. **`.env.example`**** for prototypes.** When `04-build/` uses any API, create `.env.example` with placeholder values.
 3. **Pre-commit check.** Before every commit, verify no `.env`, `credentials.json`, `*.key`, or `*.pem` files are staged.
 4. **No hardcoded keys.** Use `process.env.API_KEY` — never inline strings.
 5. **Anonymize user data.** Real names from interviews/reviews are OK if publicly posted (app store reviews). Private user data must be anonymized.

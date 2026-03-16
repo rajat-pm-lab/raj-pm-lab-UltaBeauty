@@ -19,7 +19,7 @@
 | Reddit / TikTok / forums | Multiple | ~15 threads | N/A | Marketplace outrage, app outage complaints, "refresh this page" viral |
 | Piunikaweb | [Article](https://piunikaweb.com/2025/10/09/ulta-technical-issues-customers-cant-checkout/) | N/A | N/A | Oct 2025 outage during 20% off promo |
 
-**Total reviews/reports analyzed: ~110+**
+**Total reviews/reports analyzed: \~110+**
 
 **Overall sentiment (Jan–Mar 2026):** ~85% negative across Trustpilot. App Store ratings mask deep dissatisfaction — Trustpilot's 1.7/5 (vs App Store's 4.9/5) reveals that users with serious problems migrate to external review platforms. Dominant tone: frustration with broken checkout, useless customer service, and the UB Marketplace rewards betrayal.
 
@@ -70,24 +70,33 @@ Users build carts worth $100-$1,000+, hit checkout, and get generic errors. Paym
 ---
 
 ### Pain Point 2: UB Marketplace Rewards Exclusion (The Trust Breaker)
-**Severity: 5/5 | Frequency: 12+ mentions + massive Reddit/press backlash | Revenue Impact: Critical — erodes loyalty program value for 44.6M members**
+**Severity: 5/5 | Frequency: 12+ mentions + massive Reddit/press backlash | Revenue Impact: Critical — erodes loyalty program value for 46.7M members**
 
-Ulta launched UB Marketplace in Oct 2025 with 100+ new brands but excluded marketplace purchases from: (1) redeeming reward points, (2) using promo codes, and (3) receiving gifts with purchase. Customers discovered this through a buried terms-of-service email, not proactive communication. The backlash went viral on Reddit. Users see no reason to buy marketplace products from Ulta when they can get them elsewhere AND use their rewards.
+Ulta launched UB Marketplace in Oct 2025 with 100+ new brands (now **200+ brands / 5,000 SKUs** per Q4 FY2025 earnings call) but excluded marketplace purchases from: (1) redeeming reward points, (2) using promo codes, and (3) receiving gifts with purchase. Customers discovered this through a buried terms-of-service email, not proactive communication. The backlash went viral on Reddit. Users see no reason to buy marketplace products from Ulta when they can get them elsewhere AND use their rewards.
 
 > *"Since those can't be used on marketplace items then why would I buy them from Ulta?"* — Reddit user, Oct 2025
 > *"They should've been more open and transparent about all of it before it launched"* — Frustrated shopper, Beauty Independent
 > *"A marketplace with third party sellers could erode that trust."* — Reddit user on counterfeit concerns
 > *"They emailed us on Sept. 29 that they changed the terms and conditions... that was the only communication"* — Multiple Reddit users
 
-**Why this matters for Ulta Beauty:** The Ultamate Rewards program is Ulta's #1 competitive moat — 44.6M members driving ~95% of sales. Every marketplace product that can't be bought with points weakens the value proposition of the entire loyalty ecosystem. Sephora's Beauty Insider program doesn't have this split. If loyalty members perceive their points as "worth less," they'll accumulate slower, engage less, and eventually defect. This is a **strategic trust crisis**, not just a feature gap.
+**Why this matters for Ulta Beauty:** The Ultamate Rewards program is Ulta's #1 competitive moat — 44.6M members (updated to 46.7M per FY2025 earnings) driving ~95% of total sales ([source](https://finance.yahoo.com/news/ulta-beauty-inc-q4-2025-123000876.html)). Every marketplace product that can't be bought with points weakens the value proposition of the entire loyalty ecosystem. Sephora's Beauty Insider program (34M+ members) doesn't have this split. If loyalty members perceive their points as "worth less," they'll accumulate slower, engage less, and eventually defect.
+
+**Revenue at risk:** UB Marketplace has scaled to **200+ brands and 5,000 SKUs** as of Q4 FY2025 earnings call (up from 100+ at Oct 2025 launch), with plans to "double or triple" in 12-18 months ([source](https://www.glossy.co/beauty/ulta-strategies-everything-you-need-to-know-about-ultas-new-ub-marketplace/)). Marketplace takes 18% commission per sale ([source](https://www.modernretail.co/technology/marketplace-briefing-ulta-bets-on-marketplace-to-reclaim-lost-market-share-as-amazons-beauty-sales-grow/)). If marketplace grows to 10% of Ulta's ~$2.5B digital sales = $250M in marketplace GMV. But if users refuse to buy marketplace items without rewards (the dominant complaint), Ulta loses that GMV entirely — users either skip those products or buy direct from brands. **Conservative estimate: $50M-$125M in at-risk marketplace revenue** if the rewards gap isn't bridged.
+
+Meanwhile, Ulta's FY2026 growth outlook decelerated to 6-7% (from 9.7% in FY2025), targeting $13.1B-$13.3B in net sales. The app drives **60% of online sales** with active users up **+15% YoY** (earnings call). Every loyalty member who disengages from the marketplace = lost incremental revenue that Ulta is counting on to hit growth targets.
+
+**The AI gap:** Ulta is investing in AI for marketing personalization and order fulfillment — but NOT for fixing the core shopping experience (checkout failures, marketplace confusion, rewards optimization). CEO: *"We are excited about the opportunities both social and AI-enhanced commerce platforms are providing us."* They're building the roof while the foundation is cracking. This is our opportunity.
+
+> Full earnings data: see `_brain/ulta-fy2025-earnings.md`
 
 **AI Solution:** **AI Rewards Optimizer & Marketplace Navigator**
 - Smart shopping companion that flags marketplace vs. direct items BEFORE adding to cart: "This is a Marketplace item — your points and coupons won't work here"
 - Cross-platform price comparison: "This product is $32 on Ulta Marketplace (no points) vs $29 on the brand's own site with free shipping"
 - Points maximizer: "You have 2,000 points. Here are the 10 highest-value redemptions available right now (excluding marketplace)"
 - Alerts when marketplace items become available as direct Ulta products (where points DO work)
-- **Revenue angle:** Free tool (acquisition hook) that builds trust with beauty shoppers — upsell to premium tier with deal alerts and price tracking
-- **B2B angle:** Show Ulta the data: "X% of users are abandoning marketplace carts because they can't use rewards. Here's how to bridge that gap without eating margin."
+- **Revenue angle (consumer):** Free tier (marketplace labels + points calculator) → $3-5/mo paid tier (cross-platform price alerts, deal optimizer, auto-apply best coupons). At 46.7M loyalty members, ~10M active digital shoppers, 0.5% conversion = 50K users × $4/mo = **$2.4M ARR**
+- **Revenue angle (B2B):** Pitch to Ulta: "Your marketplace rewards exclusion is causing X% cart abandonment on marketplace items. Our data shows users check 2.3 alternative sites before buying marketplace products. License our optimization layer to bridge the gap — 6-figure annual contract based on marketplace GMV recovery."
+- **B2B data play:** Aggregate anonymized shopping behavior data (what users compare, where they buy instead, price sensitivity by category) → sell insights to Ulta and marketplace brands
 
 ---
 
@@ -162,10 +171,12 @@ Ulta uses third-party carrier OnTrac (now OnTrak) which has an abysmal reputatio
 
 ## Summary: AI Product Opportunity Map
 
-| Rank | Pain Point | Mentions | Avg Helpful | AI Solution | Revenue Model | Build Complexity |
+> Ranked by **buildability × revenue potential × urgency**, not raw mention count. See ideas-backlog.md for weighted scoring.
+
+| MVP Rank | Pain Point | Mentions | Avg Helpful | AI Solution | Revenue Estimate | Build Complexity |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | **Checkout & payment failures** | 15+ | 3.5 | AI Checkout Guardian | B2B license / Free acquisition | M |
-| 2 | **Marketplace rewards exclusion** | 12+ (+ viral) | 4.8 | AI Rewards Optimizer | Free → paid upsell | S |
+| **1 (MVP)** | **Marketplace rewards exclusion** | 12+ (+ viral) | 4.8 | AI Rewards Optimizer | $2.4M ARR (realistic) | S |
+| 2 | **Checkout & payment failures** | 15+ | 3.5 | AI Checkout Guardian | $25M at-risk revenue (B2B pitch) | M |
 | 3 | **Customer service failures** | 25+ | 2.3 | AI Customer Advocate | $3-5/mo sub | M |
 | 4 | **App crashes / reliability** | 10+ (+ TikTok viral) | 3.2 | AI Shopping Shell | $4-5/mo sub | L |
 | 5 | **Shipping & delivery failures** | 18+ | 2.1 | AI Delivery Tracker | Free / bundled | S |
@@ -174,8 +185,10 @@ Ulta uses third-party carrier OnTrac (now OnTrak) which has an abysmal reputatio
 
 ## Recommended MVP Strategy
 
-**Phase 1 — Free acquisition hook (AI Rewards Optimizer):**
-Build the marketplace navigator + rewards optimizer first. Smallest build complexity (S), addresses the hottest emotional issue (rewards betrayal), and creates a free tool that attracts Ulta's 44.6M loyalty members. Simple value prop: "Never accidentally buy a marketplace item when you could use your points on the same product from Ulta direct."
+**Phase 1 — Free acquisition hook (AI Rewards Optimizer & Marketplace Navigator):**
+Build the marketplace navigator + rewards optimizer first. Smallest build complexity (S), addresses the hottest emotional issue (rewards betrayal), and creates a free tool that attracts Ulta's 46.7M loyalty members. Simple value prop: "Never accidentally buy a marketplace item when you could use your points on the same product from Ulta direct."
+- Free tier: marketplace vs direct item labels, points balance calculator, basic coupon eligibility check
+- Paid tier ($3-5/mo): cross-platform price comparison, deal alerts, auto-apply best coupons, points redemption optimizer
 
 **Phase 2 — Core paid product (AI Checkout Guardian + Smart Shopping):**
 Combine checkout error prevention with a reliable shopping shell. This is the killer feature: "Build your cart, verify everything works, and check out successfully — every time." Target: $4-5/mo subscription for users who shop online at Ulta weekly/monthly.
@@ -183,7 +196,35 @@ Combine checkout error prevention with a reliable shopping shell. This is the ki
 **Phase 3 — Premium / B2B play:**
 Package the checkout recovery data, delivery failure analytics, and CS deflection metrics into a B2B pitch to Ulta's Digital Product team. "Your checkout failure rate during 21 Days of Beauty cost $X in lost revenue. Your OnTrac partnership has a Y% failure rate. Here's the data and the fix."
 
-**TAM estimate:** 44.6M Ultamate Rewards members. ~$2.5B in digital sales = ~8-10M online shoppers. Even 0.1% conversion to a paid tool = 8-10K users. At $4/mo avg = **$384K-$480K ARR**. At 0.5% (realistic for a tool that saves money and prevents frustration) = **$1.9M-$2.4M ARR**. B2B license to Ulta directly could be a 6-figure annual contract based on checkout recovery ROI alone.
+**TAM/Revenue estimate:**
+
+| Metric | Value | Source |
+| --- | --- | --- |
+| Ultamate Rewards members | 46.7M (record, +5% YoY) | [FY2025 earnings call](https://www.fool.com/earnings/call-transcripts/2026/03/12/ulta-beauty-ulta-q4-2025-earnings-transcript/) |
+| % of sales from loyalty members | ~95% | FY2025 earnings |
+| Net sales (FY2025) | $12,392.8M (+9.7% YoY) | [Press release](https://www.ulta.com/investor/news-events/press-releases/detail/224/ulta-beauty-announces-fourth-quarter-and-fiscal-2025) |
+| Digital sales (FY2025, est.) | ~$2.5B | ~20% of net sales |
+| App share of online sales | 60% | Earnings call |
+| App active users growth | +15% YoY | Earnings call |
+| UB Marketplace (current) | 200+ brands, 5,000 SKUs | Earnings call |
+| Marketplace commission rate | 18% | [Modern Retail](https://www.modernretail.co/technology/marketplace-briefing-ulta-bets-on-marketplace-to-reclaim-lost-market-share-as-amazons-beauty-sales-grow/) |
+| Marketplace revenue at risk | $50M-$125M | If marketplace reaches 10% of digital GMV but users won't buy without rewards |
+| FY2026 guidance: net sales | $13.1B-$13.3B (+6-7%) | Press release (deceleration from 9.7%) |
+| FY2026 guidance: comp sales | +2.5%-3.5% | Press release (down from +5.4%) |
+| FY2026 guidance: EPS | $28.05-$28.55 | Press release |
+| Total stores | 1,591 (1,505 US + 86 international) | Press release |
+
+**Consumer revenue model:**
+- 0.1% conversion of 10M digital shoppers = 10K users × $4/mo = **$480K ARR** (conservative)
+- 0.5% conversion = 50K users × $4/mo = **$2.4M ARR** (realistic — tool saves real money)
+- 1.0% conversion = 100K users × $4/mo = **$4.8M ARR** (optimistic — requires viral moment)
+
+**B2B revenue model:**
+- Marketplace GMV recovery data → 6-figure annual license to Ulta
+- Anonymized shopping behavior insights → sell to marketplace brands ($5K-$25K/brand/year)
+- Combined B2B potential: **$200K-$500K/year**
+
+**Total addressable revenue (Year 2): $2.6M-$5.3M** (consumer + B2B combined)
 
 ---
 
