@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef, type ReactNode } from 'react';
 import { StoreContext } from './useStore';
 import type { AppState } from './useStore';
-import type { Product } from '../data/types';
+import type { Product, CartItem } from '../data/types';
 import { products, defaultCartIds } from '../data/products';
 
 function createDefaultCart(): CartItem[] {
@@ -27,7 +27,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     shakeItems: [],
   });
 
-  const toastTimer = useRef<ReturnType<typeof setTimeout>>();
+  const toastTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const showToast = useCallback((message: string) => {
     if (toastTimer.current) clearTimeout(toastTimer.current);

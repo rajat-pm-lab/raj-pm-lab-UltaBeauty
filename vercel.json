@@ -1,0 +1,9 @@
+{
+  "buildCommand": "cd projects/ulta-beauty/04-build/rewards-optimizer && npm install && npm run build",
+  "outputDirectory": "projects/ulta-beauty/04-build/rewards-optimizer/dist",
+  "installCommand": "echo 'Install handled in buildCommand'",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

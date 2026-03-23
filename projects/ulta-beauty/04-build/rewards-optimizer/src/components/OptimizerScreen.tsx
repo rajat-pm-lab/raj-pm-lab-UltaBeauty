@@ -1,4 +1,4 @@
-import { useStore, getMarketplaceItems, getDirectItems, getCouponSavings, getPointsEarned, getTotalValueLost } from '../store/useStore';
+import { useStore, getMarketplaceItems, getCouponSavings, getPointsEarned, getTotalValueLost } from '../store/useStore';
 import type { Product } from '../data/types';
 
 // Mock direct alternatives for optimizer recommendations
@@ -37,7 +37,6 @@ export function OptimizerScreen() {
   const store = useStore();
   const { cart, setScreen, showToast, swapCartItem } = store;
   const marketplaceItems = getMarketplaceItems(cart);
-  const directItems = getDirectItems(cart);
   const pointsEarned = getPointsEarned(cart);
   const couponSavings = getCouponSavings(cart);
   const totalValueLost = getTotalValueLost(cart);
