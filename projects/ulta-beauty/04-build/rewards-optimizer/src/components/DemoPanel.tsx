@@ -53,7 +53,7 @@ export function DemoPanel() {
                   }`}
                 >
                   ✅ Fixed
-                  <span className="block text-[10px] font-normal opacity-80">With Optimizer</span>
+                  <span className="block text-[10px] font-normal opacity-80">With Transparency</span>
                 </button>
               </div>
 

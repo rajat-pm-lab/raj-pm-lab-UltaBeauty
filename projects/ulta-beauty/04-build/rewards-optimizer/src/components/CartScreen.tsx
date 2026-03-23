@@ -257,16 +257,7 @@ export function CartScreen() {
           </div>
         </div>
 
-        {/* CTA Buttons */}
-        {mode === 'fixed' && marketplaceItems.length > 0 && (
-          <button
-            onClick={() => setScreen('optimizer')}
-            className="w-full py-3 mb-3 bg-ulta-pink text-white text-sm font-bold rounded-xl hover:bg-pink-600 transition-colors btn-press shadow-lg"
-          >
-            🤖 Optimize My Cart
-          </button>
-        )}
-
+        {/* CTA Button */}
         <button
           className="w-full py-3 mb-4 border-2 border-gray-200 text-gray-600 text-sm font-semibold rounded-xl hover:bg-gray-50 btn-press"
         >
@@ -299,7 +290,14 @@ function CartItemCard({ item, mode, shakeItems, store }: {
 
   return (
     <div className={`bg-white border border-gray-100 rounded-lg p-3 flex items-start gap-3 ${isShaking ? 'animate-shake' : ''}`}>
-      <span className="text-2xl mt-0.5">{item.image}</span>
+      <img
+        src={item.image}
+        alt={`${item.brand} ${item.name}`}
+        className="w-14 h-14 object-contain rounded-md bg-gray-50 mt-0.5"
+        onError={(e) => {
+          (e.target as HTMLImageElement).src = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='50%' x='50%' dominant-baseline='middle' text-anchor='middle' font-size='40'>🧴</text></svg>`;
+        }}
+      />
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
@@ -318,14 +316,7 @@ function CartItemCard({ item, mode, shakeItems, store }: {
         {mode === 'fixed' && (
           <div className="mt-1 space-y-0.5">
             {isMarketplace ? (
-              <>
-                <p className="text-[10px] text-red-500">❌ No points · ❌ No coupon</p>
-                {item.directAlternative && (
-                  <p className="text-[10px] text-blue-500">
-                    💡 Available at {item.directAlternative.retailer} — ${item.directAlternative.price.toFixed(2)}
-                  </p>
-                )}
-              </>
+              <p className="text-[10px] text-red-500">❌ No points · ❌ No coupon</p>
             ) : (
               <>
                 <p className="text-[10px] text-ulta-gold">⭐ Earn {item.pointsEarned * item.quantity} pts</p>

@@ -119,14 +119,6 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         shakeItems: [],
       }),
 
-    swapCartItem: (oldId: number, newProduct: Product) =>
-      setState(s => ({
-        ...s,
-        cart: s.cart.map(item =>
-          item.id === oldId ? { ...newProduct, quantity: item.quantity } : item
-        ),
-      })),
-
     showToast,
   };
 

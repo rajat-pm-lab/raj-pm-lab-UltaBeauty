@@ -24,5 +24,5 @@ export interface CartItem extends Product {
 }
 
 export type DemoMode = 'broken' | 'fixed';
-export type Screen = 'browse' | 'cart' | 'optimizer';
+export type Screen = 'browse' | 'cart';
 export type Category = 'all' | 'skincare' | 'makeup' | 'haircare' | 'fragrance';

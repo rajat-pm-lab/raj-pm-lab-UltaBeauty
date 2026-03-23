@@ -3,7 +3,6 @@ import { Header } from './components/Header';
 import { DemoPanel } from './components/DemoPanel';
 import { BrowseScreen } from './components/BrowseScreen';
 import { CartScreen } from './components/CartScreen';
-import { OptimizerScreen } from './components/OptimizerScreen';
 import { Toast } from './components/Toast';
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
       <main className="flex-1 flex flex-col min-h-0">
         {screen === 'browse' && <BrowseScreen />}
         {screen === 'cart' && <CartScreen />}
-        {screen === 'optimizer' && <OptimizerScreen />}
       </main>
       <Toast />
     </div>

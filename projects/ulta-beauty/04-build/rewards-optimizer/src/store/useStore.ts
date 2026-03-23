@@ -28,7 +28,6 @@ export interface AppActions {
   attemptPointsRedemption: () => void;
   toggleDemoPanel: () => void;
   resetDemo: () => void;
-  swapCartItem: (oldId: number, newProduct: Product) => void;
   showToast: (message: string) => void;
 }
 

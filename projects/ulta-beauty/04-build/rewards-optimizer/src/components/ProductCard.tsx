@@ -20,8 +20,15 @@ export function ProductCard({ product }: Props) {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col transition-all duration-300">
       {/* Image area */}
-      <div className="bg-gray-50 h-28 flex items-center justify-center text-4xl">
-        {product.image}
+      <div className="bg-gray-50 h-36 flex items-center justify-center p-2 relative">
+        <img
+          src={product.image}
+          alt={`${product.brand} ${product.name}`}
+          className="max-h-full max-w-full object-contain"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='50%' x='50%' dominant-baseline='middle' text-anchor='middle' font-size='40'>🧴</text></svg>`;
+          }}
+        />
       </div>
 
       <div className="p-3 flex flex-col flex-1">
@@ -106,7 +113,7 @@ export function ProductCard({ product }: Props) {
               onClick={() => addToCart(product)}
               className="w-full py-2 bg-ulta-pink text-white text-xs font-semibold rounded-lg hover:bg-ulta-pink-light transition-colors btn-press"
             >
-              Add to Cart
+              Add to Bag
             </button>
           )}
         </div>

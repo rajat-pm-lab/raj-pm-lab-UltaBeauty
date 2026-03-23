@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useStore, getMarketplaceItems, getCartTotal } from '../store/useStore';
 import { products } from '../data/products';
 import { ProductCard } from './ProductCard';
@@ -11,20 +12,41 @@ const categories: { label: string; value: Category }[] = [
   { label: 'Fragrance', value: 'fragrance' },
 ];
 
+type SortOption = 'default' | 'price-low' | 'price-high' | 'points-value';
+
 export function BrowseScreen() {
   const { activeCategory, setCategory, searchQuery, setSearchQuery, cart, setScreen, mode } = useStore();
+  const [pointsOnly, setPointsOnly] = useState(false);
+  const [sortBy, setSortBy] = useState<SortOption>('default');
 
-  const filteredProducts = products.filter(p => {
+  let filteredProducts = products.filter(p => {
     const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
     const matchesSearch = searchQuery === '' ||
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.brand.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    const matchesPoints = !pointsOnly || p.source === 'ulta_direct';
+    return matchesCategory && matchesSearch && matchesPoints;
   });
+
+  // Sort
+  if (sortBy === 'price-low') {
+    filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
+  } else if (sortBy === 'price-high') {
+    filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
+  } else if (sortBy === 'points-value') {
+    filteredProducts = [...filteredProducts].sort((a, b) => {
+      const aValue = a.pointsEarned / a.price;
+      const bValue = b.pointsEarned / b.price;
+      return bValue - aValue;
+    });
+  }
 
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   const cartTotal = getCartTotal(cart);
   const marketplaceInCart = getMarketplaceItems(cart).length;
+
+  const directCount = filteredProducts.filter(p => p.source === 'ulta_direct').length;
+  const marketplaceCount = filteredProducts.filter(p => p.source === 'marketplace').length;
 
   return (
     <div className="flex flex-col min-h-0 flex-1">
@@ -59,6 +81,43 @@ export function BrowseScreen() {
             {cat.label}
           </button>
         ))}
+      </div>
+
+      {/* Fixed mode: Filter & sort controls */}
+      {mode === 'fixed' && (
+        <div className="px-4 pb-2 flex items-center gap-2 animate-fade-in">
+          <button
+            onClick={() => setPointsOnly(!pointsOnly)}
+            className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-semibold transition-colors ${
+              pointsOnly
+                ? 'bg-green-100 text-green-800 border border-green-300'
+                : 'bg-gray-100 text-gray-500 border border-transparent'
+            }`}
+          >
+            ⭐ Points-eligible only
+          </button>
+
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value as SortOption)}
+            className="px-2 py-1.5 rounded-full text-[11px] font-medium bg-gray-100 text-gray-600 border-none focus:outline-none focus:ring-2 focus:ring-ulta-pink/30 cursor-pointer"
+          >
+            <option value="default">Sort: Best Sellers</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="points-value">Points Value</option>
+          </select>
+        </div>
+      )}
+
+      {/* Results count */}
+      <div className="px-4 pb-2 flex items-center justify-between">
+        <span className="text-xs text-gray-500 font-medium">
+          {filteredProducts.length} results
+          {mode === 'fixed' && !pointsOnly && (
+            <span className="text-gray-400"> ({directCount} direct, {marketplaceCount} marketplace)</span>
+          )}
+        </span>
       </div>
 
       {/* Product grid */}
