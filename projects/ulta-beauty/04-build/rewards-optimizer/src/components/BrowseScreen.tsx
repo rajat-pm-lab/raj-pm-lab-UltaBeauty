@@ -115,7 +115,7 @@ export function BrowseScreen() {
         <span className="text-xs text-gray-500 font-medium">
           {filteredProducts.length} results
           {mode === 'fixed' && !pointsOnly && (
-            <span className="text-gray-400"> ({directCount} direct, {marketplaceCount} marketplace)</span>
+            <span className="text-gray-400"> ({directCount} Ulta Direct, {marketplaceCount} partner)</span>
           )}
         </span>
       </div>
@@ -147,7 +147,7 @@ export function BrowseScreen() {
               <span className="text-sm font-semibold">🛒 {cartCount} items · ${cartTotal.toFixed(2)}</span>
               {mode === 'fixed' && marketplaceInCart > 0 && (
                 <p className="text-[10px] text-pink-100 mt-0.5">
-                  ⚠️ {marketplaceInCart} items won't earn points
+                  {marketplaceInCart} partner {marketplaceInCart === 1 ? 'item' : 'items'} in bag
                 </p>
               )}
             </div>

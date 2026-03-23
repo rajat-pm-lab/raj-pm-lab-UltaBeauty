@@ -8,7 +8,7 @@ interface Props {
 export function ProductCard({ product }: Props) {
   const { mode, cart, addToCart, updateQuantity } = useStore();
   const cartItem = cart.find(item => item.id === product.id);
-  const isMarketplace = product.source === 'marketplace';
+  const isDirect = product.source === 'ulta_direct';
 
   // In broken mode, show misleading points for marketplace items
   const displayPoints = mode === 'broken'
@@ -29,24 +29,21 @@ export function ProductCard({ product }: Props) {
             (e.target as HTMLImageElement).src = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='50%' x='50%' dominant-baseline='middle' text-anchor='middle' font-size='40'>🧴</text></svg>`;
           }}
         />
+        {/* Badge overlay on image — only in fixed mode */}
+        {mode === 'fixed' && (
+          <span
+            className={`absolute top-2 left-2 px-2 py-0.5 rounded-full text-[9px] font-semibold tracking-wide animate-fade-in ${
+              isDirect
+                ? 'bg-green-600 text-white'
+                : 'bg-gray-500 text-white'
+            }`}
+          >
+            {isDirect ? 'Ulta Direct' : 'Sold by Partner'}
+          </span>
+        )}
       </div>
 
       <div className="p-3 flex flex-col flex-1">
-        {/* Badge - only in fixed mode */}
-        {mode === 'fixed' && (
-          <div className="mb-1.5 animate-fade-in">
-            <span
-              className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wide ${
-                isMarketplace
-                  ? 'bg-marketplace-amber-light text-yellow-800'
-                  : 'bg-direct-green-light text-green-800'
-              }`}
-            >
-              {isMarketplace ? '⚠️ MARKETPLACE' : '✅ ULTA DIRECT'}
-            </span>
-          </div>
-        )}
-
         {/* Brand */}
         <p className="text-[10px] uppercase tracking-wider text-gray-400 font-semibold">
           {product.brand}
@@ -68,27 +65,27 @@ export function ProductCard({ product }: Props) {
           ${product.price.toFixed(2)}
         </p>
 
-        {/* Points */}
-        <div className="mt-1 text-xs">
-          {mode === 'fixed' && isMarketplace ? (
-            <p className="text-red-500 font-medium">❌ No points earned</p>
-          ) : (
-            <p className="text-ulta-gold font-medium">
+        {/* Points & coupon — positive-only signaling */}
+        <div className="mt-1 min-h-[2rem]">
+          {mode === 'broken' ? (
+            /* Broken mode: ALL items show points (misleading) */
+            <p className="text-xs text-ulta-gold font-medium">
               ⭐ Earn {displayPoints} pts (${(displayPoints * 0.01).toFixed(2)})
             </p>
+          ) : (
+            /* Fixed mode: Only direct items show points & coupon */
+            isDirect && (
+              <div className="animate-fade-in">
+                <p className="text-xs text-ulta-gold font-medium">
+                  ⭐ Earn {product.pointsEarned} pts (${(product.pointsEarned * 0.01).toFixed(2)})
+                </p>
+                <p className="text-[11px] text-green-600 mt-0.5">
+                  Coupon eligible
+                </p>
+              </div>
+            )
           )}
         </div>
-
-        {/* Coupon eligibility - only in fixed mode */}
-        {mode === 'fixed' && (
-          <div className="mt-0.5 text-[11px] animate-fade-in">
-            {isMarketplace ? (
-              <p className="text-red-500">❌ No coupons</p>
-            ) : (
-              <p className="text-green-600">✅ Coupons apply</p>
-            )}
-          </div>
-        )}
 
         {/* Add to Cart / Quantity */}
         <div className="mt-auto pt-2">

@@ -61,22 +61,22 @@ export function DemoPanel() {
               {marketplaceCount > 0 && (
                 <div className="mb-4">
                   <h4 className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                    This Cart's Impact
+                    Savings Insight
                   </h4>
                   <div className="space-y-1.5 text-xs">
                     <div className="flex justify-between">
-                      <span className="text-gray-500">Points at risk</span>
-                      <span className="font-semibold text-red-600">
+                      <span className="text-gray-500">Points on partner items</span>
+                      <span className="font-semibold text-gray-700">
                         {pointsLost.toLocaleString()} pts (${(pointsLost * 0.01).toFixed(2)})
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-500">Coupon savings lost</span>
-                      <span className="font-semibold text-red-600">${couponLost.toFixed(2)}</span>
+                      <span className="text-gray-500">Coupon on partner items</span>
+                      <span className="font-semibold text-gray-700">${couponLost.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between border-t border-gray-100 pt-1.5">
-                      <span className="text-gray-700 font-medium">Total left on table</span>
-                      <span className="font-bold text-red-600">${totalLost.toFixed(2)}</span>
+                      <span className="text-gray-700 font-medium">Potential savings</span>
+                      <span className="font-bold text-blue-600">${totalLost.toFixed(2)}</span>
                     </div>
                   </div>
                 </div>

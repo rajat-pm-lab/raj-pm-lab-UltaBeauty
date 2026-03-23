@@ -83,6 +83,47 @@ This reframe turns a product that Ulta could never adopt (cart optimizer that ca
 
 ---
 
+### v1.2 — Positive-Only Signaling & Image Fidelity (March 23)
+
+**The trigger:** After deploying v1.1, four specific feedback points surfaced:
+
+1. Product images didn't match actual Ulta products (SKU IDs were guesses)
+2. Marketplace badges used amber/caution styling that felt hostile to partner brands
+3. Marketplace products showed red crosses ("No points earned," "No coupons") — punitive language
+4. Cart retained broken/fixed toggle — should it stay? (Answer: yes, the betrayal moment IS the demo)
+
+**Key insight:**
+
+> If Ulta's marketplace team saw our prototype labeling their partners with caution symbols and red crosses, they'd reject the pitch before reading the business case.
+
+The prototype needs to demonstrate how transparency can be **brand-safe**. Partner brands shouldn't feel penalized — Direct products should feel *rewarded*.
+
+**Decision: Adopt positive-only signaling. Remove all negative indicators.**
+
+**What changed:**
+
+| Before (v1.1) | After (v1.2) |
+| --- | --- |
+| Green "ULTA DIRECT" + amber "MARKETPLACE" badges | Green "Ulta Direct" + neutral gray "Sold by Partner" badges |
+| "No points earned" with red cross on marketplace items | Nothing shown — absence is the signal |
+| "No coupons" with red cross on marketplace items | Nothing shown — Direct items show "Coupon eligible" |
+| "YOU'RE LEAVING $XX ON THE TABLE" (yellow alert) | "Potential additional savings" (blue, informational) |
+| "Points at risk" / "Coupon savings lost" in demo panel | "Points on partner items" / "Potential savings" |
+| Cart sections: "✅ Ulta Direct" / "⚠️ UB Marketplace" | "Ulta Direct" / "Sold by Partner" (clean, no emojis) |
+| Generic/wrong product images | Verified Ulta CDN SKUs for all Direct products |
+
+**The design principle:** Show users what they *gain* with Direct items, not what they *lose* with partner items. A user browsing products will naturally notice that some cards have gold point indicators and green coupon badges, and some don't. That asymmetry IS the transparency — no negative labeling required.
+
+**Image updates:** All Ulta Direct products now use verified SKU IDs from ulta.com search results. Marketplace products (Glossier, Glow Recipe, Le Labo, Gisou, K18) retain existing SKU patterns — if images don't load, the emoji fallback (`🧴`) activates via the `onError` handler.
+
+**Why this matters for the pitch:**
+
+> "We're not punishing partner brands — we're celebrating Direct benefits. Users see points and coupon eligibility on Direct items. Partner items simply don't show those indicators. The distinction is clear without being adversarial."
+
+This reframe makes the prototype safe to show to Ulta's marketplace partnerships team, not just the loyalty team.
+
+---
+
 ## Principles Emerging From This Project
 
 1. **Solve at discovery, not cart.** Transparency early = informed consent. Transparency late = betrayal.
@@ -90,14 +131,18 @@ This reframe turns a product that Ulta could never adopt (cart optimizer that ca
 3. **The "wow" feature isn't always the right feature.** The cart optimizer was impressive but strategically indefensible. The browse badge is simpler but shippable.
 4. **Observe the live product.** The Ulta website screenshot showing "Only at Ulta" on some items (but no marketplace label) confirmed the gap exists in production today.
 5. **Revenue framing must be bilateral.** Don't just frame user savings — frame how the solution preserves or grows the company's revenue too.
+6. **Positive-only signaling wins.** Reward the good instead of punishing the other. Absence of a benefit indicator IS the signal — no need for red crosses or warning labels.
 
 ---
 
 ## What's Next
 
-- [ ] Update prototype code to remove OptimizerScreen and cart swap logic
-- [ ] Enhance BrowseScreen with filter/sort by points eligibility
-- [ ] Simplify cart to show grouping + summary only (no steering)
-- [ ] Update demo panel copy to reflect discovery-focused value prop
+- [x] Update prototype code to remove OptimizerScreen and cart swap logic (v1.1)
+- [x] Enhance BrowseScreen with filter/sort by points eligibility (v1.1)
+- [x] Simplify cart to show grouping + summary only (no steering) (v1.1)
+- [x] Update demo panel copy to reflect discovery-focused value prop (v1.1)
+- [x] Adopt positive-only signaling — remove all negative indicators (v1.2)
+- [x] Redesign badges to be brand-safe (v1.2)
+- [x] Fix product images with verified Ulta CDN SKUs (v1.2)
 - [ ] Redeploy to Vercel
 - [ ] LinkedIn post for PM Labs weekly showcase (March 25, 2026)

@@ -60,10 +60,10 @@ export function CartScreen() {
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2 py-1.5 border-b-2 border-green-200">
                   <span className="text-xs font-bold text-green-700 uppercase tracking-wider">
-                    ✅ Ulta Direct ({directItems.length} items)
+                    Ulta Direct ({directItems.length} items)
                   </span>
                 </div>
-                <p className="text-[10px] text-green-600 mb-2">Points & coupons work on these items</p>
+                <p className="text-[10px] text-green-600 mb-2">Points & coupons eligible</p>
                 <div className="space-y-2">
                   {directItems.map(item => (
                     <CartItemCard key={item.id} item={item} mode="fixed" shakeItems={store.shakeItems} store={store} />
@@ -75,12 +75,12 @@ export function CartScreen() {
             {/* Marketplace items section */}
             {marketplaceItems.length > 0 && (
               <div className="mb-4">
-                <div className="flex items-center gap-2 mb-2 py-1.5 border-b-2 border-yellow-200">
-                  <span className="text-xs font-bold text-yellow-700 uppercase tracking-wider">
-                    ⚠️ UB Marketplace ({marketplaceItems.length} items)
+                <div className="flex items-center gap-2 mb-2 py-1.5 border-b-2 border-gray-200">
+                  <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                    Sold by Partner ({marketplaceItems.length} items)
                   </span>
                 </div>
-                <p className="text-[10px] text-yellow-600 mb-2">No points, coupons, or GWP</p>
+                <p className="text-[10px] text-gray-400 mb-2">Fulfilled by brand partner</p>
                 <div className="space-y-2">
                   {marketplaceItems.map(item => (
                     <CartItemCard key={item.id} item={item} mode="fixed" shakeItems={store.shakeItems} store={store} />
@@ -206,25 +206,25 @@ export function CartScreen() {
                 {marketplaceItems.length > 0 && (
                   <>
                     <div className="border-t border-gray-200 my-2" />
-                    <div className="flex justify-between text-red-600">
-                      <span>⚠️ Points NOT earned</span>
+                    <div className="flex justify-between text-gray-500">
+                      <span>Partner items (no points)</span>
                       <span className="font-semibold">{pointsLost.toLocaleString()} pts</span>
                     </div>
-                    <div className="flex justify-between text-red-600">
-                      <span>⚠️ Coupon NOT applied</span>
+                    <div className="flex justify-between text-gray-500">
+                      <span>Partner items (no coupon)</span>
                       <span className="font-semibold">${couponLost.toFixed(2)}</span>
                     </div>
 
-                    {/* VALUE ALERT */}
-                    <div className="bg-yellow-50 border border-yellow-300 rounded-lg p-3 mt-2 animate-pulse-glow">
-                      <p className="text-xs font-bold text-yellow-800 text-center">
-                        YOU'RE LEAVING
+                    {/* SAVINGS INSIGHT */}
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-2">
+                      <p className="text-xs font-semibold text-blue-800 text-center">
+                        Potential additional savings
                       </p>
-                      <p className="text-xl font-bold text-yellow-800 text-center mt-0.5">
+                      <p className="text-xl font-bold text-blue-800 text-center mt-0.5">
                         ${totalValueLost.toFixed(2)}
                       </p>
-                      <p className="text-xs font-bold text-yellow-800 text-center">
-                        ON THE TABLE
+                      <p className="text-[10px] text-blue-600 text-center mt-1">
+                        if partner items were Ulta Direct
                       </p>
                     </div>
                   </>
@@ -302,10 +302,10 @@ function CartItemCard({ item, mode, shakeItems, store }: {
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
             {mode === 'fixed' && (
-              <span className={`text-[9px] font-bold uppercase tracking-wider ${
-                isMarketplace ? 'text-yellow-600' : 'text-green-600'
+              <span className={`text-[9px] font-semibold tracking-wider ${
+                isMarketplace ? 'text-gray-400' : 'text-green-600'
               }`}>
-                {isMarketplace ? '⚠️ Marketplace' : '✅ Direct'}
+                {isMarketplace ? 'Sold by Partner' : 'Ulta Direct'}
               </span>
             )}
             <p className="text-xs font-semibold text-gray-900 truncate">{item.brand} {item.name}</p>
@@ -313,16 +313,10 @@ function CartItemCard({ item, mode, shakeItems, store }: {
           <p className="text-sm font-bold text-gray-900 whitespace-nowrap">${(item.price * item.quantity).toFixed(2)}</p>
         </div>
 
-        {mode === 'fixed' && (
+        {mode === 'fixed' && !isMarketplace && (
           <div className="mt-1 space-y-0.5">
-            {isMarketplace ? (
-              <p className="text-[10px] text-red-500">❌ No points · ❌ No coupon</p>
-            ) : (
-              <>
-                <p className="text-[10px] text-ulta-gold">⭐ Earn {item.pointsEarned * item.quantity} pts</p>
-                <p className="text-[10px] text-green-600">🏷️ 20% coupon: −${(item.price * item.quantity * 0.20).toFixed(2)}</p>
-              </>
-            )}
+            <p className="text-[10px] text-ulta-gold">⭐ Earn {item.pointsEarned * item.quantity} pts</p>
+            <p className="text-[10px] text-green-600">Coupon eligible: −${(item.price * item.quantity * 0.20).toFixed(2)}</p>
           </div>
         )}
 
