@@ -10,11 +10,6 @@ export function ProductCard({ product }: Props) {
   const cartItem = cart.find(item => item.id === product.id);
   const isDirect = product.source === 'ulta_direct';
 
-  // In broken mode, show misleading points for marketplace items
-  const displayPoints = mode === 'broken'
-    ? Math.round(product.price * 10)
-    : product.pointsEarned;
-
   // Render star rating like Ulta (filled ★, half ★, empty ☆)
   const fullStars = Math.floor(product.rating);
   const hasHalf = product.rating % 1 >= 0.5;
@@ -70,25 +65,17 @@ export function ProductCard({ product }: Props) {
           ${product.price.toFixed(2)}
         </p>
 
-        {/* Points & coupon — positive-only signaling */}
+        {/* Points & coupon — only shown in fixed mode (real Ulta doesn't show this) */}
         <div className="mt-1 min-h-[2rem]">
-          {mode === 'broken' ? (
-            /* Broken mode: ALL items show points (misleading — like current Ulta) */
-            <p className="text-[11px] text-ulta-gold font-medium">
-              ⭐ Earn {displayPoints} pts (${(displayPoints * 0.01).toFixed(2)})
-            </p>
-          ) : (
-            /* Fixed mode: Only direct items show points & coupon */
-            isDirect && (
-              <div className="animate-fade-in">
-                <p className="text-[11px] text-ulta-gold font-medium">
-                  ⭐ Earn {product.pointsEarned} pts (${(product.pointsEarned * 0.01).toFixed(2)})
-                </p>
-                <p className="text-[11px] text-green-600 mt-0.5">
-                  Coupon eligible
-                </p>
-              </div>
-            )
+          {mode === 'fixed' && isDirect && (
+            <div className="animate-fade-in">
+              <p className="text-[11px] text-ulta-gold font-medium">
+                ⭐ Earn {product.pointsEarned} pts (${(product.pointsEarned * 0.01).toFixed(2)})
+              </p>
+              <p className="text-[11px] text-green-600 mt-0.5">
+                Coupon eligible
+              </p>
+            </div>
           )}
         </div>
 
