@@ -124,6 +124,75 @@ This reframe makes the prototype safe to show to Ulta's marketplace partnerships
 
 ---
 
+### v1.3 — Empty Cart & Brand-Accurate Logo (March 23)
+
+**The trigger:** Final polish pass before demo prep. Two issues:
+
+1. Cart came pre-loaded with 6 items — users couldn't experience the natural flow of browsing → adding to bag
+2. Logo was plain text "ULTA BEAUTY" in uniform bold — didn't match the official Ulta Beauty brand identity
+
+**Decision: Start with empty cart and match official logo treatment.**
+
+**What changed:**
+
+| Before (v1.2) | After (v1.3) |
+| --- | --- |
+| Cart pre-loaded with 6 default items (4 direct + 2 marketplace) | Empty cart — users add items themselves |
+| Reset demo also reloads default items | Reset clears to empty cart |
+| Plain bold "ULTA BEAUTY" text in header | Bold "**ulta**" + light "beauty" with orange-to-pink gradient bar |
+| `defaultCartIds` export in products.ts | Removed entirely |
+
+**Why this matters:**
+
+The demo flow should mirror real user behavior: browse products, notice the transparency signals (or lack thereof in broken mode), add items to bag, then see the cart experience. Pre-loading items skipped the most important part of the story — the browse discovery moment where users see (or don't see) the source distinction.
+
+The logo update ensures the prototype looks credible when shown to Ulta stakeholders. Brand accuracy signals professionalism.
+
+---
+
+### v1.4 — UI Fidelity: Match Real Ulta Website (March 23)
+
+**The trigger:** Side-by-side comparison of our prototype with screenshots from ulta.com/promotion/sale revealed the UI felt like a generic e-commerce app, not Ulta Beauty. For the broken vs. fixed toggle to work as a pitch tool, the **broken mode must look like the real Ulta experience** — otherwise the "before" loses credibility.
+
+**Reference screenshots:** `Ulta Beauty UI Elements Reference Screenshot 1.png` and `Screenshot 2.png` captured from the live Ulta website.
+
+**Key UI elements observed on ulta.com:**
+
+| Element | Ulta.com Style | Our Prototype (before) |
+| --- | --- | --- |
+| "Add to bag" button | Black background, white text, pill/rounded shape | Pink background, rounded-lg |
+| Brand name | ALL CAPS, bold, black | Small uppercase, gray, lighter weight |
+| Category pills | White with gray border, black when active | Filled pink when active, gray fill otherwise |
+| Search bar | White background, gray border, rounded | Gray background, no border |
+| Product image area | Light gray (#f5f5f5), square aspect ratio | Gray-50, fixed 144px height |
+| Rating display | Stars + numeric rating + (count) | Stars + (count) only |
+| Sort dropdown | "Sort by: Best Sellers" right-aligned | Rounded pill select |
+| Cart bar | N/A on browse page | Pink rounded bar |
+
+**Decision: Match Ulta's real UI elements in both broken and fixed modes.**
+
+**What changed:**
+
+| Component | Before (v1.3) | After (v1.4) |
+| --- | --- | --- |
+| "Add to bag" button | `bg-ulta-pink rounded-lg` | `bg-black rounded-full` — matches Ulta |
+| Brand name | `text-[10px] text-gray-400 font-semibold` | `text-[11px] text-gray-900 font-bold` — ALL CAPS bold black |
+| Category pills | Pink filled active, gray fill inactive | Black filled active, white with border inactive |
+| Search bar | Gray background, no border | White background, gray border — "Search Ulta Beauty" |
+| Image area | `h-36` fixed height | `aspect-square` — natural product proportions |
+| Star rating | Stars + (count) | Stars + numeric value + (count) |
+| Sort control | Only in fixed mode | Available in both modes (like real Ulta) |
+| Cart bar | Pink, `rounded-xl`, shopping cart emoji | Black, `rounded-full`, "View bag →" |
+| Product grid | `gap-3` | `gap-4` — more breathing room |
+
+**Why this matters:**
+
+> The broken mode IS the "current Ulta experience." If it looks generic, the audience won't feel the pain. If it looks exactly like ulta.com, they'll recognize it instantly — and the fixed mode reveal becomes a powerful "what if" moment.
+
+UI fidelity is a credibility multiplier for the pitch.
+
+---
+
 ## Principles Emerging From This Project
 
 1. **Solve at discovery, not cart.** Transparency early = informed consent. Transparency late = betrayal.
@@ -132,6 +201,7 @@ This reframe makes the prototype safe to show to Ulta's marketplace partnerships
 4. **Observe the live product.** The Ulta website screenshot showing "Only at Ulta" on some items (but no marketplace label) confirmed the gap exists in production today.
 5. **Revenue framing must be bilateral.** Don't just frame user savings — frame how the solution preserves or grows the company's revenue too.
 6. **Positive-only signaling wins.** Reward the good instead of punishing the other. Absence of a benefit indicator IS the signal — no need for red crosses or warning labels.
+7. **UI fidelity is credibility.** When pitching a "broken vs. fixed" toggle, the broken state must look like the real product. Generic UI weakens the before/after narrative.
 
 ---
 
@@ -144,5 +214,8 @@ This reframe makes the prototype safe to show to Ulta's marketplace partnerships
 - [x] Adopt positive-only signaling — remove all negative indicators (v1.2)
 - [x] Redesign badges to be brand-safe (v1.2)
 - [x] Fix product images with verified Ulta CDN SKUs (v1.2)
-- [ ] Redeploy to Vercel
+- [x] Empty cart by default — users add items themselves (v1.3)
+- [x] Match official Ulta Beauty logo branding (v1.3)
+- [x] Redeploy to Vercel (v1.3)
+- [x] Match real Ulta website UI elements — buttons, pills, layout (v1.4)
 - [ ] LinkedIn post for PM Labs weekly showcase (March 25, 2026)
