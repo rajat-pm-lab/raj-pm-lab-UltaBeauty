@@ -82,18 +82,6 @@ export function DemoPanel() {
                 </div>
               )}
 
-              {/* At Ulta Scale */}
-              <div className="bg-gray-50 rounded-lg p-3 mb-4">
-                <h4 className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-2">
-                  At Ulta Scale
-                </h4>
-                <div className="space-y-1 text-xs text-gray-600">
-                  <p>46.7M loyalty members affected</p>
-                  <p className="font-semibold text-gray-800">$50M–$125M marketplace GMV at risk</p>
-                  <p className="text-[10px] text-gray-400 mt-1">Source: FY2025 earnings + review data</p>
-                </div>
-              </div>
-
               <button
                 onClick={resetDemo}
                 className="w-full py-2 text-xs font-medium text-gray-500 border border-gray-200 rounded-lg hover:bg-gray-50 btn-press"
