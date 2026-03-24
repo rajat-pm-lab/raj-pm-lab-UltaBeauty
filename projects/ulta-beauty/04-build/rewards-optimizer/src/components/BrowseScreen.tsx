@@ -50,71 +50,73 @@ export function BrowseScreen() {
 
   return (
     <div className="flex flex-col min-h-0 flex-1">
-      {/* Search bar — matches Ulta's search UI */}
-      <div className="px-4 pt-3 pb-2">
-        <div className="relative">
-          <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          <input
-            type="text"
-            placeholder="Search Ulta Beauty"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-300 rounded-full text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
-          />
-        </div>
-      </div>
-
-      {/* Category pills — bordered style like Ulta */}
-      <div className="px-4 pb-2 flex gap-2 overflow-x-auto scrollbar-hide">
-        {categories.map(cat => (
-          <button
-            key={cat.value}
-            onClick={() => setCategory(cat.value)}
-            className={`px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-colors border ${
-              activeCategory === cat.value
-                ? 'bg-black text-white border-black'
-                : 'bg-white text-gray-700 border-gray-300 hover:border-gray-500'
-            }`}
-          >
-            {cat.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Fixed mode: Filter & sort controls */}
-      {mode === 'fixed' && (
-        <div className="px-4 pb-2 flex items-center gap-2 animate-fade-in">
-          <button
-            onClick={() => setPointsOnly(!pointsOnly)}
-            className={`flex items-center gap-1 px-3 py-2 rounded-full text-[11px] font-semibold transition-colors border ${
-              pointsOnly
-                ? 'bg-green-50 text-green-800 border-green-400'
-                : 'bg-white text-gray-500 border-gray-300'
-            }`}
-          >
-            ⭐ Points-eligible only
-          </button>
-
-          <div className="ml-auto flex items-center gap-1">
-            <span className="text-xs text-gray-400">Sort by</span>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as SortOption)}
-              className="px-2 py-1.5 text-xs font-medium bg-white text-gray-700 border-none focus:outline-none cursor-pointer"
-            >
-              <option value="default">Best Sellers</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="points-value">Points Value</option>
-            </select>
+      {/* Sticky controls — fixed on top while scrolling, like real Ulta */}
+      <div className="sticky top-[57px] z-10 bg-white border-b border-gray-100">
+        {/* Search bar */}
+        <div className="px-4 pt-3 pb-2">
+          <div className="relative">
+            <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Search Ulta Beauty"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-300 rounded-full text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            />
           </div>
         </div>
-      )}
 
-      {/* Results count — matches Ulta's light gray style */}
-      <div className="px-4 pb-2 flex items-center justify-between">
+        {/* Category pills */}
+        <div className="px-4 pb-2 flex gap-2 overflow-x-auto scrollbar-hide">
+          {categories.map(cat => (
+            <button
+              key={cat.value}
+              onClick={() => setCategory(cat.value)}
+              className={`px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-colors border ${
+                activeCategory === cat.value
+                  ? 'bg-black text-white border-black'
+                  : 'bg-white text-gray-700 border-gray-300 hover:border-gray-500'
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Fixed mode: Filter & sort controls */}
+        {mode === 'fixed' && (
+          <div className="px-4 pb-2 flex items-center gap-2 animate-fade-in">
+            <button
+              onClick={() => setPointsOnly(!pointsOnly)}
+              className={`flex items-center gap-1 px-3 py-2 rounded-full text-[11px] font-semibold transition-colors border ${
+                pointsOnly
+                  ? 'bg-green-50 text-green-800 border-green-400'
+                  : 'bg-white text-gray-500 border-gray-300'
+              }`}
+            >
+              ⭐ Points-eligible only
+            </button>
+
+            <div className="ml-auto flex items-center gap-1">
+              <span className="text-xs text-gray-400">Sort by</span>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as SortOption)}
+                className="px-2 py-1.5 text-xs font-medium bg-white text-gray-700 border-none focus:outline-none cursor-pointer"
+              >
+                <option value="default">Best Sellers</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="points-value">Points Value</option>
+              </select>
+            </div>
+          </div>
+        )}
+
+        {/* Results count */}
+        <div className="px-4 pb-2 flex items-center justify-between">
         <span className="text-sm text-gray-400">
           {filteredProducts.length} results
           {mode === 'fixed' && !pointsOnly && (
@@ -135,6 +137,7 @@ export function BrowseScreen() {
             </select>
           </div>
         )}
+      </div>
       </div>
 
       {/* Product grid */}
