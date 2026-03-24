@@ -1,23 +1,14 @@
 import { useState, useCallback, useRef, type ReactNode } from 'react';
 import { StoreContext } from './useStore';
 import type { AppState } from './useStore';
-import type { Product, CartItem } from '../data/types';
-import { products, defaultCartIds } from '../data/products';
-
-function createDefaultCart(): CartItem[] {
-  return defaultCartIds
-    .map(id => products.find(p => p.id === id))
-    .filter((p): p is Product => !!p)
-    .map(p => ({ ...p, quantity: 1 }));
-}
-
+import type { Product } from '../data/types';
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<AppState>({
     mode: 'broken',
     screen: 'browse',
     activeCategory: 'all',
     searchQuery: '',
-    cart: createDefaultCart(),
+    cart: [],
     couponApplied: false,
     couponCode: '',
     pointsRedemptionAttempted: false,
@@ -109,7 +100,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         screen: 'browse',
         activeCategory: 'all',
         searchQuery: '',
-        cart: createDefaultCart(),
+        cart: [],
         couponApplied: false,
         couponCode: '',
         pointsRedemptionAttempted: false,

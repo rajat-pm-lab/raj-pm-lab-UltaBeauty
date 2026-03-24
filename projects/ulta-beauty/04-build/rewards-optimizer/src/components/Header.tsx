@@ -19,8 +19,10 @@ export function Header() {
             </button>
           )}
           <button onClick={() => setScreen('browse')} className="hover:opacity-80">
-            <h1 className="text-lg font-bold tracking-[2px] text-black uppercase">
-              ULTA BEAUTY
+            <h1 className="text-xl tracking-[1px] uppercase">
+              <span className="font-extrabold text-black">ulta</span>
+              <span className="font-normal text-black ml-1">beauty</span>
+              <span className="block h-[3px] bg-gradient-to-r from-[#e4723a] via-[#e4723a] to-[#d4145a] rounded-full mt-0.5" />
             </h1>
           </button>
         </div>

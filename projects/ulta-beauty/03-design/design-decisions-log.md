@@ -137,10 +137,10 @@ This reframe makes the prototype safe to show to Ulta's marketplace partnerships
 
 ## What's Next
 
-- [x] Update prototype code to remove OptimizerScreen and cart swap logic (v1.1)
-- [x] Enhance BrowseScreen with filter/sort by points eligibility (v1.1)
-- [x] Simplify cart to show grouping + summary only (no steering) (v1.1)
-- [x] Update demo panel copy to reflect discovery-focused value prop (v1.1)
+- [ ] Update prototype code to remove OptimizerScreen and cart swap logic (v1.1)
+- [ ] Enhance BrowseScreen with filter/sort by points eligibility (v1.1)
+- [ ] Simplify cart to show grouping + summary only (no steering) (v1.1)
+- [ ] Update demo panel copy to reflect discovery-focused value prop (v1.1)
 - [x] Adopt positive-only signaling — remove all negative indicators (v1.2)
 - [x] Redesign badges to be brand-safe (v1.2)
 - [x] Fix product images with verified Ulta CDN SKUs (v1.2)

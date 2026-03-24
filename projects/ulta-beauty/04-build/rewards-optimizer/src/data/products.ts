@@ -460,6 +460,3 @@ export const products: Product[] = [
     reviewCount: 9876
   }
 ];
-
-// Default cart items for demo (4 direct + 2 marketplace)
-export const defaultCartIds = [1, 2, 3, 4, 5, 6];
